@@ -7,16 +7,18 @@ import custom from "./custom-style.json";
 let map;
 
 async function init() {
-    const neighborhoods = await import("../data/output.json");
+    const buildings = await import("../data/tall_buildings.json");
+    const seismic_hazards = await import("../data/seismic_hazards.json");
     const style = map.getStyle();
-
+    
     style.sources = {
         ...style.sources,
         ...custom.sources
     };
     style.layers.push(...custom.layers);
     map.setStyle(style);
-    map.getSource("neighborhoods").setData(neighborhoods);
+    map.getSource("buildings").setData(buildings);
+    map.getSource("seismic_hazards").setData(seismic_hazards);
 }
 
 mapboxgl.accessToken = settings.accessToken;

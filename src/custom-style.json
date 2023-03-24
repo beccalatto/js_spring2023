@@ -1,6 +1,13 @@
 {
     "sources": {
-        "neighborhoods": {
+        "buildings": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": []
+            }
+        },
+        "seismic_hazards": {
             "type": "geojson",
             "data": {
                 "type": "FeatureCollection",
@@ -10,48 +17,50 @@
     },
     "layers": [
         {
-            "id": "neighborhoods-outline",
-            "type": "line",
-            "source": "neighborhoods",
+            "id": "seismic_hazards-fill",
+            "type": "fill",
+            "source": "seismic_hazards",
             "paint": {
-                "line-width": 3
-            },
-            "filter": [
-                "!=",
-                [
-                    "get",
-                    "count"
-                ],
-                0
-            ]
+                "fill-color": "#946b57",
+                "fill-opacity": 0.6
+            }
         },
         {
-            "id": "neighborhoods-fill",
+            "id": "seismic_hazards-line",
+            "type": "line",
+            "source": "seismic_hazards",
+            "paint": {
+                "line-color": "#FFFFFF",
+                "line-width": 1
+            }
+        },
+        {
+            "id": "buildings-fill",
             "type": "fill-extrusion",
-            "source": "neighborhoods",
+            "source": "buildings",
             "paint": {
                 "fill-extrusion-color": [
                     "step",
-                    ["get", "count"],
-                    "#f1eef6",
-                    50, "#d0d1e6",
-                    100, "#a6bddb",
-                    300, "#74a9cf",
-                    600, "#2b8cbe",
-                    1000, "#045a8d"
+                    ["get", "height_ft"],
+                    "#f7f7f7",
+                    100, "#cccccc",
+                    200, "#969696",
+                    500, "#636363",
+                    1000, "#252525"
                 ],
-                "fill-extrusion-opacity": 0.8,
+                "fill-extrusion-opacity": 0.9,
                 "fill-extrusion-height": [
                     "*",
-                    ["get", "count"],
-                    5
+                    ["get", "height_ft"],
+                    1
                 ]
-            },
+                },
             "filter": [
                 "!=",
-                ["get", "count"],
-                0
+                ["get", "height_ft"],
+                null
             ]
+            
         }
     ]
 }

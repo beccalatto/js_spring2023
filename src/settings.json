@@ -1,11 +1,11 @@
 {
     "container": "map",
-    "accessToken": "pk.eyJ1Ijoicmdhc3RvbiIsImEiOiJJYTdoRWNJIn0.MN6DrT07IEKXadCU8xpUMg",
-    "style": "mapbox://styles/rgaston/cleud3ghr000901tjq55m9tm5",
+    "accessToken": "pk.eyJ1IjoicmViZWNjYWxhdHRvIiwiYSI6ImNsZXU4emxtMjA0djEzc280dmRqYzV3aDIifQ.JonHOU2ZQzVtFawONuq9Lg",
+    "style": "mapbox://styles/rebeccalatto/cleud3i1u001c01ph0r7cn3zl",
     "center": [
-        -118.32741294940357,
-        34.04076382207846
+        -122.400803,
+        37.787011
     ],
-    "zoom": 9,
+    "zoom": 15,
     "pitch": 40
 }

@@ -1,6 +1,5 @@
 import { collect } from "@turf/turf";
-import sites from "../data/sites.json" assert {type: "json"};
-import neighborhoods from "../data/neighborhoods.json" assert {type: "json"};
+import neighborhoods from "../data/tall_buildings.json" assert {type: "json"};
 import fs from "fs";
 
 sites.features.forEach(function(feature) {
