@@ -7,5 +7,6 @@
         37.787011
     ],
     "zoom": 15,
-    "pitch": 40
+    "pitch": 40,
+    "customAttribution": "<a href='https://data.sfgov.org/Housing-and-Buildings/Map-of-Tall-Buildings/xnf9-cudk' target=_blank'> DataSF: Tall Buildings </a> | <a href='https://data.sfgov.org/City-Infrastructure/San-Francisco-Seismic-Hazard-Zones/7ahv-68ap' target='_blank'> DataSF: Seismic Hazards </a>"
 }

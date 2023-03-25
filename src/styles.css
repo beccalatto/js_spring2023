@@ -15,3 +15,39 @@ main {
 #map {
     height: 100%;
 }
+
+header, #popup, #legend {
+    position: fixed;
+    z-index: 1;
+    background-color: darkseagreen;
+    font-size: 25px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#popup {
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+header {
+    top: 10px;
+    left: 10px;
+}
+
+#legend {
+    bottom: 30px;
+    right: 10px;
+}
+
+.color {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
+}
+
+h3 {
+    margin: 2px
+}

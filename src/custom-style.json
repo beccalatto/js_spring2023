@@ -2,6 +2,7 @@
     "sources": {
         "buildings": {
             "type": "geojson",
+            "generateId": true,
             "data": {
                 "type": "FeatureCollection",
                 "features": []
@@ -9,6 +10,7 @@
         },
         "seismic_hazards": {
             "type": "geojson",
+            "generateId": true,
             "data": {
                 "type": "FeatureCollection",
                 "features": []
@@ -43,16 +45,39 @@
                     "step",
                     ["get", "height_ft"],
                     "#f7f7f7",
-                    100, "#cccccc",
-                    200, "#969696",
-                    500, "#636363",
-                    1000, "#252525"
+                    50, "#cccccc",
+                    100, "#969696",
+                    250, "#636363",
+                    500, "#252525"
                 ],
-                "fill-extrusion-opacity": 0.9,
+                "fill-extrusion-opacity": 0.8, 
                 "fill-extrusion-height": [
-                    "*",
-                    ["get", "height_ft"],
-                    1
+                    "+",
+                    [
+                        "*",
+                        ["get", "height_ft"],
+                        1
+                    ],
+                    [
+                        "case",
+                        [
+                            "boolean",
+                            ["feature-state", "hover"],
+                            false
+                        ],
+                        1,
+                        0
+                    ]
+                ],
+                "fill-extrusion-base": [
+                    "case",
+                    [
+                        "boolean",
+                        ["feature-state", "hover"],
+                        false
+                    ],
+                    1,
+                    0
                 ]
                 },
             "filter": [
@@ -64,3 +89,4 @@
         }
     ]
 }
+
